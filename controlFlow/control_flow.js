@@ -53,3 +53,29 @@ isAuthenticated = true;
 
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not Authenticated";
 console.log("Authentication Status:", authenticationStatus);
+
+// Practice task
+function checkAccess(role) {
+    switch (role.toLowerCase()) {
+      case "employee":
+        console.log("You are authorized to access 'Dietary Services'.");
+        break;
+      case "enrolled member":
+        console.log("You are authorized to access 'Dietary Services' and enjoy one-on-one interaction with a dietician.");
+        break;
+      case "subscriber":
+        console.log("You have partial access to facilitate 'Dietary Services'.");
+        break;
+      case "non-subscriber":
+        console.log("Please enroll or subscribe first to avail this facility.");
+        break;
+      default:
+        console.log("Invalid role. Please specify a valid designation.");
+    }
+  }
+  
+  //  Example usage:
+  checkAccess("employee");         // Output: You are authorized to access 'Dietary Services'.
+  checkAccess("enrolled member"); // Output: You are authorized to access 'Dietary Services' and enjoy one-on-one interaction with a dietician.
+  checkAccess("subscriber");      // Output: You have partial access to facilitate 'Dietary Services'.
+  checkAccess("non-subscriber");  // Output: Please enroll or subscribe first to avail this facility.
