@@ -49,7 +49,8 @@ function clearInputs() {
     document.getElementById('pagesNumber').value = '';
 }
 
-function deleteBook(index) {
-    books.splice(index, 1); // Remove old entry
-    showbooks(); // Refresh list
+function deletebook(index) {
+    // Remove the book entry at the given index
+    books.splice(index, 1);
+    showbooks(); // Refresh the book list after deletion
 }
