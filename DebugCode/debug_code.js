@@ -18,7 +18,7 @@ function calculateAll(a, b) {
     // Introduce a debugger statement to pause execution
     debugger;
 
-    // Multiply the numbers
+    // calculate the numbers
     return {
         addition: a + b,
         multiplication: a * b,
