@@ -6,8 +6,7 @@ function performOperation() {
     // Check if inputs are valid numbers
     if (!isNaN(num1) && !isNaN(num2)) {
         // Perform the operation
-            let result = multiply(num1, num2);
-
+            let result = calculateAll(num1, num2);
             // Display the result
             displayResult(result);
     } else {
@@ -15,16 +14,30 @@ function performOperation() {
     }
 }
 
-function multiply(a, b) {
+function calculateAll(a, b) {
     // Introduce a debugger statement to pause execution
     debugger;
 
     // Multiply the numbers
-    return a * b;
+    return {
+        addition: a + b,
+        multiplication: a * b,
+        division: b !== 0 ? a / b : 'Cannot divide by zero'
+
+    }
 }
 
 function displayResult(result) {
     // Display the result in the paragraph element
     const resultElement = document.getElementById('result');
-    resultElement.textContent = `The result is: ${result}`;
+    if (result.error) {
+        resultElement.textContent = result.error;
+    } else {
+        resultElement.innerHTML = `
+        <p>Addition: ${result.addition}</p>
+        <p>Multiplication: ${result.multiplication}</p>
+        <p>Division: ${result.division}</p>
+           `;
+    }
+
 }
